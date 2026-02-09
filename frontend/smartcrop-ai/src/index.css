@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* SmartCrop AI Design System - Agriculture Tech Theme */
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 45 30% 97%;
+    --foreground: 140 30% 15%;
+
+    /* Clean white cards */
+    --card: 0 0% 100%;
+    --card-foreground: 140 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 30% 15%;
+
+    /* Deep forest green primary */
+    --primary: 142 50% 28%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Warm earth secondary */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 140 30% 15%;
+
+    /* Soft sage muted */
+    --muted: 140 15% 92%;
+    --muted-foreground: 140 15% 45%;
+
+    /* Fresh lime accent */
+    --accent: 90 55% 50%;
+    --accent-foreground: 140 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 142 50% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for the app */
+    --earth: 30 35% 40%;
+    --earth-light: 35 30% 85%;
+    --lime: 90 55% 50%;
+    --lime-light: 90 45% 92%;
+    --forest: 142 50% 28%;
+    --forest-dark: 142 55% 20%;
+    --cream: 45 30% 97%;
+    --gold: 45 90% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 50% 28%) 0%, hsl(90 55% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 30% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(90 55% 50%) 0%, hsl(142 50% 35%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 140 30% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 140 25% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 140 25% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 90 55% 50%;
+    --primary-foreground: 140 30% 10%;
+
+    --secondary: 140 20% 18%;
+    --secondary-foreground: 45 30% 95%;
+
+    --muted: 140 20% 18%;
+    --muted-foreground: 140 15% 60%;
+
+    --accent: 90 55% 45%;
+    --accent-foreground: 140 30% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 20% 20%;
+    --input: 140 20% 20%;
+    --ring: 90 55% 50%;
+
+    --earth: 30 30% 55%;
+    --earth-light: 35 25% 25%;
+    --lime: 90 55% 55%;
+    --lime-light: 90 35% 20%;
+    --forest: 142 45% 40%;
+    --forest-dark: 142 50% 30%;
+    --cream: 45 20% 15%;
+    --gold: 45 85% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 25%) 0%, hsl(90 50% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(140 25% 12%) 0%, hsl(140 25% 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(90 55% 45%) 0%, hsl(142 45% 30%) 100%);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .input-field {
+    @apply rounded-xl border-2 border-border bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-xl px-6 py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply gradient-accent text-primary-foreground rounded-xl px-6 py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:px-8 lg:py-24;
+  }
+}

@@ -1,0 +1,27 @@
+# ===== Python =====
+venv/
+
+# ===== ML artifacts =====
+ml/data/
+ml/saved_models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.ckpt
+
+# ===== Node / Frontend =====
+frontend/smartcrop-ai/node_modules/
+frontend/dist/
+frontend/.env
+
+# ===== Backend =====
+backend/.env
+
+# ===== OS / Editor =====
+.DS_Store
+.vscode/
+.idea/
+
+# ===== Logs =====
+*.log
